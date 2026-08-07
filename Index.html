@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paklippin - Shop Smarter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="container">
+            <span><i class="fas fa-truck"></i> Free Shipping on Orders Over ₨5,000</span>
+            <div>
+                <a href="#"><i class="fas fa-user"></i> Sign In</a>
+                <a href="#"><i class="fas fa-shopping-cart"></i> Cart <span class="cart-count" id="cartCount">0</span></a>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <div class="container">
+            <div class="logo"><h1>Paklippin</h1><span>.com</span></div>
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search products...">
+                <button onclick="searchProducts()"><i class="fas fa-search"></i></button>
+            </div>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="container">
+            <a href="#"><i class="fas fa-bars"></i> All Categories</a>
+            <a href="#" onclick="filterCategory('Electronics')">Electronics</a>
+            <a href="#" onclick="filterCategory('Fashion')">Fashion</a>
+            <a href="#" onclick="filterCategory('Home')">Home</a>
+            <a href="#" onclick="filterCategory('Beauty')">Beauty</a>
+            <a href="#" onclick="filterCategory('Sports')">Sports</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Paklippin Mega Sale!</h2>
+                <p>Up to <strong>70% OFF</strong> — Shop Now!</p>
+                <a href="#" class="btn-primary" onclick="scrollToProducts()">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categories">
+        <div class="container">
+            <h3>Top Categories</h3>
+            <div class="category-grid">
+                <div class="category-card" onclick="filterCategory('Electronics')"><i class="fas fa-mobile-alt"></i><p>Electronics</p></div>
+                <div class="category-card" onclick="filterCategory('Fashion')"><i class="fas fa-tshirt"></i><p>Fashion</p></div>
+                <div class="category-card" onclick="filterCategory('Home')"><i class="fas fa-couch"></i><p>Home</p></div>
+                <div class="category-card" onclick="filterCategory('Beauty')"><i class="fas fa-spa"></i><p>Beauty</p></div>
+                <div class="category-card" onclick="filterCategory('Sports')"><i class="fas fa-futbol"></i><p>Sports</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="products" id="productsSection">
+        <div class="container">
+            <div class="section-header">
+                <h3>🔥 Best Sellers</h3>
+                <a href="#" onclick="showAllProducts()">View All</a>
+            </div>
+            <div class="product-grid" id="productGrid"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2026 Paklippin.com — All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

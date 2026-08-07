@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    background: #f5f5f5;
+}
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+.top-bar {
+    background: #01411C;
+    color: #fff;
+    padding: 8px 0;
+    font-size: 13px;
+    border-bottom: 3px solid #FCD116;
+}
+.top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.top-bar a {
+    color: #ccc;
+    margin-left: 20px;
+}
+.top-bar a:hover {
+    color: #FCD116;
+}
+header {
+    background: #01411C;
+    padding: 16px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 3px solid #FCD116;
+}
+header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.logo h1 {
+    color: #FCD116;
+    font-size: 28px;
+}
+.logo span {
+    color: #fff;
+    font-size: 20px;
+    opacity: 0.5;
+}
+.search-bar {
+    flex: 1;
+    max-width: 600px;
+    display: flex;
+    border: 2px solid #FCD116;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.search-bar input {
+    flex: 1;
+    padding: 12px 20px;
+    border: none;
+    outline: none;
+}
+.search-bar button {
+    background: #FCD116;
+    color: #01411C;
+    border: none;
+    padding: 0 24px;
+    cursor: pointer;
+    font-weight: bold;
+}
+.cart-count {
+    background: #CE1126;
+    color: #fff;
+    border-radius: 50%;
+    padding: 0 7px;
+    font-size: 12px;
+    margin-left: 4px;
+}
+.main-nav {
+    background: #fff;
+    padding: 10px 0;
+    border-bottom: 2px solid #FCD116;
+}
+.main-nav .container {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+    font-weight: 500;
+}
+.main-nav a:hover {
+    color: #FCD116;
+}
+.hero {
+    background: linear-gradient(135deg, #01411C, #0032A0);
+    color: #fff;
+    padding: 50px 0;
+    margin: 20px 0 30px;
+    border-radius: 16px;
+    border: 2px solid #FCD116;
+}
+.hero-content h2 {
+    font-size: 38px;
+}
+.hero-content p {
+    font-size: 22px;
+    margin: 12px 0 24px;
+}
+.btn-primary {
+    display: inline-block;
+    background: #FCD116;
+    color: #01411C;
+    padding: 14px 36px;
+    border-radius: 40px;
+    font-weight: 700;
+}
+.categories {
+    margin: 40px 0;
+}
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+}
+.category-card {
+    background: #fff;
+    padding: 24px;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.category-card:hover {
+    border-color: #FCD116;
+}
+.category-card i {
+    font-size: 36px;
+    color: #01411C;
+}
+.products {
+    margin: 40px 0 60px;
+}
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+}
+.product-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 16px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+.product-card:hover {
+    border-color: #FCD116;
+}
+.product-image {
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    color: #01411C;
+}
+.price {
+    color: #CE1126;
+    font-size: 20px;
+    font-weight: 700;
+}
+.old-price {
+    color: #999;
+    text-decoration: line-through;
+    margin-left: 8px;
+    font-size: 14px;
+}
+.add-btn {
+    width: 100%;
+    padding: 10px;
+    background: #01411C;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+}
+.add-btn:hover {
+    background: #FCD116;
+    color: #01411C;
+}
+footer {
+    background: #01411C;
+    color: #ddd;
+    padding: 30px 0;
+    border-top: 4px solid #FCD116;
+}
+.footer-bottom {
+    text-align: center;
+}
+@media (max-width: 768px) {
+    .hero-content h2 { font-size: 26px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
+}
