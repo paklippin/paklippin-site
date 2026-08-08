@@ -41,3 +41,30 @@
 </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Signup - Paklippin</title>
+  <style>body{font-family:Arial;max-width:400px;margin:50px auto;text-align:center}</style>
+</head>
+<body>
+  <h2>Paklippin Signup</h2>
+  <input id="email" type="email" placeholder="Email" style="width:100%;padding:10px;margin:10px 0">
+  <input id="password" type="password" placeholder="Password" style="width:100%;padding:10px;margin:10px 0">
+  <button onclick="signUp()" style="width:100%;padding:10px;background:green;color:white;border:none">Sign Up</button>
+  <p>Already have account? <a href="/login.html">Login</a></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabase = supabase.createClient('YOUR_PROJECT_URL', 'YOUR_ANON_KEY')
+    async function signUp() {
+      const { data, error } = await supabase.auth.signUp({
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      })
+      if(error) alert('Error: ' + error.message)
+      else alert('Signup ho gaya! Ab login karein')
+    }
+  </script>
+</body>
+</html>
