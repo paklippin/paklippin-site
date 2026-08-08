@@ -75,17 +75,4 @@ function scrollToProducts() {
     document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' });
 }
 
-renderProducts();
-updateCartUI();
-// Node.js example with Express
-app.post('/signup', async (req, res) => {
-  const { name, email, password } = req.body;
-  const hashedPassword = await bcrypt.hash(password, 10);
-  // Save user to database
-});
 
-app.post('/login', async (req, res) => {
-  const { email, password } = req.body;
-  // Check user exists & verify password
-  // Return JWT token or session
-});
