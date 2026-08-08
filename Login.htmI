@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PakLippin - Login</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: Arial; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 300px; }
+    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background: #16a34a; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #15803d; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Login</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+    <p>New user? <a href="/signup.html">Sign Up</a></p>
+    <p id="msg"></p>
+  </div>
+
+<script>
+  const SUPABASE_URL = 'https://hcowihjrxbukhqjbk...supabase.co'
+  const SUPABASE_KEY = 'sb_publishable_MlJe8cnK2r7WNQ9V4nK6Pw_hyDWtGA9'
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+
+  async function login() {
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
+    
+    if(error) {
+      document.getElementById('msg').innerText = error.message
+    } else {
+      document.getElementById('msg').innerText = 'Login Success!'
+      // yahan aap dashboard par bhej sakte hain
+      // window.location.href = '/dashboard.html'
+    }
+  }
+</script>
+</body>
+</html>

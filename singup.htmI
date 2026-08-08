@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>PakLippin - Sign Up</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body { font-family: Arial; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; }
+    .box { background: white; padding: 30px; border-radius: 10px; box-shadow: 0 0 10px #ccc; width: 300px; }
+    input { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ddd; border-radius: 5px; }
+    button { width: 100%; padding: 10px; background: #2563eb; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    button:hover { background: #1d4ed8; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h2>Sign Up</h2>
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="signup()">Create Account</button>
+    <p>Already have account? <a href="/login.html">Login</a></p>
+    <p id="msg"></p>
+  </div>
+
+<script>
+  const SUPABASE_URL = 'https://hcowihjrxbukhqjbk...supabase.co'
+  const SUPABASE_KEY = 'sb_publishable_MlJe8cnK2r7WNQ9V4nK6Pw_hyDWtGA9'
+  const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY)
+
+  async function signup() {
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const { data, error } = await supabase.auth.signUp({ email, password })
+    
+    if(error) {
+      document.getElementById('msg').innerText = error.message
+    } else {
+      document.getElementById('msg').innerText = 'Check your email to confirm!'
+    }
+  }
+</script>
+</body>
+</html>
