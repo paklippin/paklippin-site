@@ -95,3 +95,18 @@
   </script>
 </body>
 </html>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+  const supabase = supabase.createClient(
+    'https://hcowlhjrxbukhqbjkvam.supabase.co',
+    'sb_publishable_MlJe8cnK2r7WNQ9V4nK6Pw_hyDWt...' // اپنی پوری key لگائیں
+  )
+  
+  async function signup() {
+    const email = document.getElementById('email').value
+    const password = document.getElementById('password').value
+    const { error } = await supabase.auth.signUp({ email, password })
+    if(error) document.getElementById('msg').innerText = error.message
+    else document.getElementById('msg').innerText = 'Account created! Now login.'
+  }
+</script>
