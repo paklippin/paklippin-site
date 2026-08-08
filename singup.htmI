@@ -68,3 +68,30 @@
   </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head><title>Signup - Paklippin</title></head>
+<body>
+  <h2>Signup</h2>
+  <input id="email" type="email" placeholder="Email">
+  <input id="password" type="password" placeholder="Password">
+  <button onclick="signUp()">Sign Up</button>
+  <p><a href="/login.html">Login</a></p>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+    const supabase = supabase.createClient(
+      'https://hcowlhjrxbukhqbjkvam.supabase.co',
+      'sb_publishable_MlJe8cnK2r7WNQ9V4nK6Pw_hyDWt...' // پوری key لگائیں
+    )
+    async function signUp() {
+      const { error } = await supabase.auth.signUp({
+        email: document.getElementById('email').value,
+        password: document.getElementById('password').value
+      })
+      if(error) alert(error.message)
+      else alert('Signup successful!')
+    }
+  </script>
+</body>
+</html>
